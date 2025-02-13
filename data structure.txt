@@ -1,0 +1,13 @@
+The most suitable data structure for this problem is a directed graph represented using an adjacency list.  A dictionary in Python works perfectly for this.
+ (i) Key: Each city your son visited (e.g., "Kiev", "Prague").
+ (ii) Value: A list of cities that can be directly reached from the key city using one of the available train tickets.
+We'll also use a set to efficiently keep track of the cities your son mentioned he visited.
+2. Algorithm:
+The algorithm will be a modified Depth-First Search (DFS) or a simple iterative approach since we know the starting city. Because each ticket can only be used once, we don't need to worry about cycles.
+ (i) Create Graph: Build the directed graph from the available train tickets.
+ (ii) Initialize Route: Start the route with the city your son began his journey from ("Kiev").
+ (iii) Iterate and Extend: While there are still unused tickets from the current city:
+   * Find a ticket from the current city to a destination city that your son mentioned he visited.
+   * Add the destination city to the route.
+   * Move to the destination city (make it the new current city).
+ (iv) Return Route: The constructed list of cities is the travel route.
